@@ -21,100 +21,168 @@ class ThirdPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Obx(() => Container(
-              height: 100,
-              width: double.infinity,
-              //backgroundColor: Colors.red,
-              //radius: 50,
-              clipBehavior: Clip.none,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.red,
-              ),
-              child: Center(
-                child: Text(
-                "Y value ${controller.y.toString()}",
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
-                  ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Obx(() => Column(
+                  children: [
+                    Container(
+                      height: 100,
+                      width: double.infinity,
+                      //backgroundColor: Colors.red,
+                      //radius: 50,
+                      clipBehavior: Clip.none,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.red,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Total value ${controller.z.toString()}",
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 100,
+                      width: double.infinity,
+                      //backgroundColor: Colors.red,
+                      //radius: 50,
+                      clipBehavior: Clip.none,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.green,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Y value ${controller.y.toString()}",
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+            const SizedBox(
+              height: 20,
+            ),
+            InkWell(
+              onTap: () {
+                Get.to(
+                  () => const Home(),
+                );
+              },
+              child: Container(
+                height: 100,
+                width: double.infinity,
+                //backgroundColor: Colors.red,
+                //radius: 50,
+                clipBehavior: Clip.none,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.blue,
                 ),
-              ),
-            ),),
-            const SizedBox(height: 20,),
-          InkWell(
-            onTap: () {
-              Get.to(() => const Home(),);
-            },
-            child: Container(
-              height: 100,
-              width: double.infinity,
-              //backgroundColor: Colors.red,
-              //radius: 50,
-              clipBehavior: Clip.none,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.red,
-              ),
-              child: Center(
-                child: Text(
-                "X value ${controller.x.toString()}",
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
+                child: Center(
+                  child: Text(
+                    "X value ${controller.x.toString()}",
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          InkWell(
-            onTap: () {
-              //Get.to(() => const Home(),);
-              Get.find<TapController>().incrementY();
-              //controller.incrementY();
-            
-            },
-            child: Container(
-              height: 100,
-              width: double.infinity,
-              //backgroundColor: Colors.red,
-              //radius: 50,
-              clipBehavior: Clip.none,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.yellow,
-              ),
-              child: const Center(
-                child: Text(
-                "Increase Y",
-                  style:  TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
+            const SizedBox(
+              height: 20,
+            ),
+            InkWell(
+              onTap: () {
+                //Get.to(() => const Home(),);
+                Get.find<TapController>().incrementY();
+                //controller.incrementY();
+              },
+              child: Container(
+                height: 100,
+                width: double.infinity,
+                //backgroundColor: Colors.red,
+                //radius: 50,
+                clipBehavior: Clip.none,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.black,
+                ),
+                child: const Center(
+                  child: Text(
+                    "Increase Y",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 20,),
-          ElevatedButton.icon(
-            onPressed: () {
-              Get.to(
-                () => const Home(),
-              );
-            },
-            icon: const Icon(Icons.home),
-            label: const Text('Home'),
-          ),
-        ],
+            const SizedBox(
+              height: 20,
+            ),
+            InkWell(
+              onTap: () {
+                //Get.to(() => const Home(),);
+                Get.find<TapController>().totalXY();
+                //controller.incrementY();
+              },
+              child: Container(
+                height: 100,
+                width: double.infinity,
+                //backgroundColor: Colors.red,
+                //radius: 50,
+                clipBehavior: Clip.none,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.indigo,
+                ),
+                child: const Center(
+                  child: Text(
+                    "Total X + Y",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                Get.to(
+                  () => const Home(),
+                );
+              },
+              icon: const Icon(Icons.home),
+              label: const Text('Home'),
+            ),
+          ],
+        ),
       ),
     );
   }
