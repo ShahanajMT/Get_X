@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx2/controllers/list_controllers.dart';
 import 'package:getx2/controllers/tap_controllers.dart';
 import 'package:getx2/pages/my_homePage.dart';
 
@@ -9,6 +10,7 @@ class ThirdPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TapController controller = Get.find();
+    ListController listController = Get.put(ListController());
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -160,6 +162,39 @@ class ThirdPage extends StatelessWidget {
                 child: const Center(
                   child: Text(
                     "Total X + Y",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+
+
+            InkWell(
+              onTap: () {
+                //Get.to(() => const Home(),);
+                Get.find<ListController>().setValue(Get.find<TapController>().z);
+                //controller.incrementY();
+              },
+              child: Container(
+                height: 100,
+                width: double.infinity,
+                //backgroundColor: Colors.red,
+                //radius: 50,
+                clipBehavior: Clip.none,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.indigo,
+                ),
+                child: const Center(
+                  child: Text(
+                    "Save Total",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
