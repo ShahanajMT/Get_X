@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx2/controllers/tap_controllers.dart';
 import 'package:getx2/pages/first_page.dart';
+import 'package:getx2/pages/second_page.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -66,7 +67,7 @@ class Home extends StatelessWidget {
                 //color: Colors.blueAccent,
                 child: const Center(
                   child: Text(
-                    "Go to Page",
+                    "Go to First Page",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -77,7 +78,9 @@ class Home extends StatelessWidget {
             ),
 
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.to(() => const SecondPage());
+              },
               child: Container(
                 margin: const EdgeInsets.all(10),
                 width: double.maxFinite,
@@ -89,7 +92,7 @@ class Home extends StatelessWidget {
                 //color: Colors.blueAccent,
                 child: const Center(
                   child: Text(
-                    "Tap",
+                    "Go to Second Page",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
