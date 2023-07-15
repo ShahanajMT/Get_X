@@ -37,7 +37,7 @@ class FirstPage extends StatelessWidget {
             );
               },
             ),
-            const Spacer(),
+            const SizedBox(height: 20,),
             ElevatedButton(
               onPressed: () {
                 controller.decrementX();
