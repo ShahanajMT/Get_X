@@ -10,7 +10,8 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //! debpendency injection
-    TapController controller = Get.put(TapController());
+    //TapController controller = Get.put(TapController());
+    TapController controller = Get.find();
     return Scaffold(
       body: SizedBox(
         height: double.maxFinite,
